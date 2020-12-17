@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin/restaurants"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Admin - Restaurant Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="primary">
+  <ion-card style="width: 100%; margin: auto;">
+    <ion-list color="primary">
+      <ion-row color="primary">
+        <ion-col color="primary">
+          <ion-item color="primary">
+            <ion-avatar style="block-size: 150px; width:150px;" color="primary">
+              <ion-img [src]="resto_image"></ion-img>
+            </ion-avatar>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+              <ion-input type="text" name="resto_name" ngModel></ion-input>
+              <ion-input type="text" name="resto_hour_open" ngModel></ion-input> - <ion-input type="text" name="resto_hour_close" ngModel></ion-input>
+              <ion-input type="text" name="resto_address" ngModel></ion-input>
+              <ion-input ngModel type="text" name="resto_city"></ion-input>
+              <ion-input type="text" name="resto_image" ngModel></ion-input>
+            </form>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <!-- <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-list color="secondary" class="detail-recipe">
+              <ion-item color="secondary" *ngFor="let food of foods">
+                <ion-avatar class="avatar-food" slot="start" style="block-size: 90px; width:90px; margin: 2% 0;">
+                  <ion-img [src]="food.imageUrl"></ion-img>
+                </ion-avatar>
+                <ion-label style="margin-left: 2%;">
+                  <p>{{food.name}}</p>
+                  <small>{{food.desc}}</small>
+                  <p>Harga : {{food.harga}}</p>
+                  <button [routerLink]="/edit-menu">
+                    <ion-icon name="pencil"></ion-icon>
+                  </button>
+                  <button (click)="deleteMenu(menu.key)">
+                    <ion-icon name="trash"></ion-icon>
+                  </button>
+                </ion-label>
+              </ion-item> 
+              <button [routerLink]="add-menu">Add a Menu</button>
+            </ion-list>
+          </ion-col> 
+        </ion-row>
+      </ion-grid> -->
+    </ion-list>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Admin - Restaurants</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="add-resto">Add</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let resto of restos">
+    <ion-card [routerLink]="['./', resto.key]" style="width: 30%; display: flex; justify-content: center;">
+      <ion-item>
+        <ion-avatar style="block-size: 120px; width:120px; margin-right: 20%;">
+          <img src="{{resto.resto_image}}">
+        </ion-avatar>
+      </ion-item>
+      <ion-card-header>
+        <ion-card-title>{{resto.resto_name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Open: {{resto.resto_hour_open}} - {{resto.resto_hour_close}}</p>
+        <p>Address: {{resto.resto_address}}, {{resto.resto_city}}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Trivias</ion-title>
+    <ion-buttons slot="end">
+      <ion-button href="admin/trivias/add-trivia">Add</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let trivia of trivias">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          {{trivia.content}}
+        </ion-card-title>
+        <ion-card-subtitle>
+          {{trivia.source}}
+        </ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </ion-item>
+</ion-content>
